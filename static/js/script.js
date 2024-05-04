@@ -25,7 +25,7 @@ document.getElementById("register").addEventListener("click", async function () 
         })
     }
 
-    const credential = navigator.credentials.create({
+    const credential = await navigator.credentials.create({
         publicKey: data.publicKey
     })
     console.log(credential);
@@ -65,7 +65,7 @@ document.getElementById("login").addEventListener("click", async function() {
         item.id = bufferDecode(item.id);
     })
 
-    const credential = navigator.credentials.get({
+    const credential = await navigator.credentials.get({
         publicKey: data.publicKey
     })
     console.log(credential);
